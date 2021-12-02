@@ -14,9 +14,8 @@ public class Piece {
 		return jButton;
 	}
 
-	public Piece(int x, int y, String imageURL, ActionListener actionListener) {
+	public Piece(String imageURL, ActionListener actionListener) {
 		jButton = new JButton();
-		jButton.setBounds(x, y, 125, 125);
 		jButton.setForeground(Color.white);
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
 		jButton.setIcon(icon);

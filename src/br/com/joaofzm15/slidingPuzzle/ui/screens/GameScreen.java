@@ -30,7 +30,7 @@ public class GameScreen implements ActionListener {
 		JButton source = (JButton) e.getSource();
 		Piece piece = board.getPieceFromItsButton(source);
 		board.highlightPiece(piece);
-		board.movePieceDown(piece);
+		System.out.println(board.getPieces().indexOf(piece));
 	}
 	
 	
