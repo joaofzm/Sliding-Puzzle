@@ -17,5 +17,7 @@ public class GameScreen {
 	public void addBoardToFrame (Board board) {
 		frame.getJFrame().add(board.getJLabel());
 	}
+	
+	
 
 }

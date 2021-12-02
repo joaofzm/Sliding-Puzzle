@@ -16,12 +16,13 @@ public class Piece {
 	
 	public Piece(int x, int y, String imageURL) {
 		jButton = new JButton();
-		jButton.setBounds(0, 0, 125 , 125);
+		jButton.setBounds(x, y, 125 , 125);
+//		jButton.setSize(125,125);
 		jButton.setForeground(Color.white);
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
 		jButton.setIcon(icon);
-		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
-		jButton.setFocusable(false);
+//		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
+//		jButton.setFocusable(true);
 	}
 
 }
