@@ -7,6 +7,7 @@ import javax.swing.JButton;
 
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Board;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Frame;
+import br.com.joaofzm15.slidingPuzzle.ui.entities.Piece;
 
 public class GameScreen implements ActionListener {
 
@@ -27,6 +28,9 @@ public class GameScreen implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton source = (JButton) e.getSource();
+		Piece piece = board.getPieceFromItsButton(source);
+		board.highlightPiece(piece);
+		board.movePieceDown(piece);
 	}
 	
 	

@@ -24,29 +24,43 @@ public class Board {
 		pieces = new ArrayList<>();
 		jLabel = new JLabel();
 		jLabel.setLayout(null);
-		fillBoard(actionListener);
+		fillListWithPieces(actionListener);
+		addPieceJLabelFromList(pieces);
 		jLabel.setBounds(700, 110, 500, 500);
 		jLabel.setVisible(true);
 //		Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
 //		jLabel.setBorder(border);
 	}
 
-	public void addPieceToBoardAndList(int x, int y, String imageURL, ActionListener actionListener) {
-		Piece piece = new Piece(x, y, imageURL, actionListener);
-		jLabel.add(piece.getJButton());
-		pieces.add(piece);
+	public void highlightPiece(Piece piece) {
+		for (Piece p : pieces) {
+			p.unHighlightPiece();
+		}
+		piece.highlightPiece();
 	}
 	
 	public Piece getPieceFromItsButton(JButton jButton) {
+		for (Piece piece : pieces) {
+			if (piece.getJButton()==jButton) {
+				return piece;
+			}
+		}
 		return null;
 	}
 
-	public void fillBoard(ActionListener actionListener) {
+
+	public void addPieceJLabelFromList(ArrayList<Piece> pieces) {
+		for (Piece piece : pieces) {
+			jLabel.add(piece.getJButton());
+		}
+	}
+	
+	public void fillListWithPieces(ActionListener actionListener) {
 		int x = 0;
 		int y = 0;
 		for (int i = 1; i <= 15; i++) {
 			String imageURL = String.valueOf(i) + ".png";
-			addPieceToBoardAndList(x, y, imageURL, actionListener);
+			pieces.add(new Piece(x, y, imageURL, actionListener));
 			if (i % 4 == 0) {
 				y += 125;
 				x = 0;
@@ -55,11 +69,32 @@ public class Board {
 			}
 		}
 	}
+	
 
 	public void refreshButtons() {
 		for (Piece piece : pieces) {
 			piece.getJButton().requestFocus();
 		}
+	}
+	
+	public void movePieceUp(Piece piece) {
+		JButton button = piece.getJButton();
+		button.setBounds(button.getX(),button.getY()-125,125,125);
+	}
+	
+	public void movePieceDown(Piece piece) {
+		JButton button = piece.getJButton();
+		button.setBounds(button.getX(),button.getY()+125,125,125);
+	}
+	
+	public void movePieceRight(Piece piece) {
+		JButton button = piece.getJButton();
+		button.setBounds(button.getX()+125,button.getY(),125,125);
+	}
+	
+	public void movePieceLeft(Piece piece) {
+		JButton button = piece.getJButton();
+		button.setBounds(button.getX()-125,button.getY(),125,125);
 	}
 
 }

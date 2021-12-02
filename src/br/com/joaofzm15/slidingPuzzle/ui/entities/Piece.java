@@ -10,7 +10,6 @@ import javax.swing.JButton;
 public class Piece {
 
 	private JButton jButton;
-
 	public JButton getJButton() {
 		return jButton;
 	}
@@ -25,6 +24,14 @@ public class Piece {
 
 		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
 		jButton.setFocusable(true);
+	}
+	
+	public void highlightPiece() {
+		jButton.setBorder(BorderFactory.createLineBorder(Color.blue,5));
+	}
+	
+	public void unHighlightPiece() {
+		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
 	}
 
 }
