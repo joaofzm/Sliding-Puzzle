@@ -1,6 +1,7 @@
 package br.com.joaofzm15.slidingPuzzle.ui.entities;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
@@ -25,12 +26,17 @@ public class Piece {
 		jButton.setFocusable(true);
 	}
 	
-	public void highlightPiece() {
-		jButton.setBorder(BorderFactory.createLineBorder(Color.blue,5));
+	public Piece(int number, ActionListener actionListener) {
+		jButton = new JButton();
+		jButton.setForeground(Color.white);
+		jButton.addActionListener(actionListener);
+		jButton.setBackground(Color.orange);
+		jButton.setText(String.valueOf(number));
+		jButton.setFont(new Font("Impact",Font.BOLD, 40));
+		jButton.setForeground(Color.white);
+		jButton.setBackground(new Color(30, 30, 30));
+		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
+		jButton.setFocusable(true);
 	}
 	
-	public void unHighlightPiece() {
-		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
-	}
-
 }

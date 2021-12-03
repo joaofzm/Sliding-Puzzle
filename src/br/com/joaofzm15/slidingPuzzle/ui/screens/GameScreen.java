@@ -25,6 +25,8 @@ public class GameScreen implements ActionListener {
 		controller = new GameScreenController();
 		addBoardToFrame(board);
 		board.refreshButtons();
+		try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();}
+		board.makeButtonsUnfocusable();
 	}
 	
 	public void addBoardToFrame (Board board) {

@@ -19,20 +19,15 @@ public class Frame {
 		jFrame.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource(backgroundURL))));
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setLayout(null);
-//		ImageIcon windowIcon = new ImageIcon(getClass().getClassLoader().getResource("windowIcon.jpg"));
-//		frame.setIconImage(windowIcon.getImage());
+		ImageIcon windowIcon = new ImageIcon(getClass().getClassLoader().getResource("icon.png"));
+		jFrame.setIconImage(windowIcon.getImage());
 		jFrame.setTitle("Sliding Puzzle");
 		jFrame.setResizable(false);
 		jFrame.setSize(1280, 720);
 		jFrame.setLocationRelativeTo(null);
-		makeFrameVisible();
-	}
-
-	public void makeFrameVisible() {
 		jFrame.pack();
-		jFrame.setVisible(true);
-	}
-	
+		jFrame.setVisible(true);	}
+
 	public void dispose() {
 		jFrame.dispose();
 	}
