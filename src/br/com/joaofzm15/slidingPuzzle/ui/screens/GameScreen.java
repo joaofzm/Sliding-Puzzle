@@ -7,6 +7,7 @@ import javax.swing.JButton;
 
 import br.com.joaofzm15.slidingPuzzle.SFX.SoundEffect;
 import br.com.joaofzm15.slidingPuzzle.logic.GameScreenController;
+import br.com.joaofzm15.slidingPuzzle.ui.entities.BestLabel;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Board;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Button;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.CongratulationsMessage;
@@ -19,6 +20,7 @@ public class GameScreen implements ActionListener {
 	private Frame frame;
 	private Board board;
 	private MoveCounter moveCounter;
+	private BestLabel bestLabel;
 	private Button shuffleButton;	
 	private Button exitButton;	
 	private boolean solved;
@@ -37,11 +39,14 @@ public class GameScreen implements ActionListener {
 		frame.getJFrame().add(congratulationsMessage.getCongratulationsLabel());
 		frame.getJFrame().add(congratulationsMessage.getClickShufflLabel());
 		
-		shuffleButton = new Button(225, 400, 180, 60, "S H U F F L E", 0, 0, 0, 22,this);
+		shuffleButton = new Button(225, 500, 180, 60, "S H U F F L E", 0, 0, 0, 22,this);
 		frame.getJFrame().add(shuffleButton.getJButton());
 		
-		exitButton = new Button(240, 500, 150, 60, "E X I T", 0, 0, 0, 22,this);
+		exitButton = new Button(240, 600, 150, 60, "E X I T", 0, 0, 0, 22,this);
 		frame.getJFrame().add(exitButton.getJButton());
+		
+		bestLabel = new BestLabel();
+		frame.getJFrame().add(bestLabel.getJLabel());
 
 		moveCounter = new MoveCounter();
 		frame.getJFrame().add(moveCounter.getJLabel());
@@ -58,6 +63,10 @@ public class GameScreen implements ActionListener {
 		moveCounter.increaseCounter();
 		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		moveCounter.resetCounter();
+		
+		bestLabel.setBest(10000000);
+		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
+		bestLabel.getJLabel().setText("Best : -");
 		
 		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		shuffleButton.refreshButton();
@@ -111,6 +120,7 @@ public class GameScreen implements ActionListener {
 			if (won) {
 				congratulationsMessage.makeVisible();
 				solved=true;
+				bestLabel.setBest(moveCounter.getMoves());
 				new Thread(new SoundEffect("/victory.wav")).start();
 			}
 		}

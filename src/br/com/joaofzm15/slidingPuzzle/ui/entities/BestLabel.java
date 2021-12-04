@@ -6,24 +6,20 @@ import java.awt.Font;
 import javax.swing.JLabel;
 
 
-public class MoveCounter {
+public class BestLabel {
 	private JLabel jLabel;
-	private int moves = 0;
-	
 	public JLabel getJLabel() {
 		return jLabel;
 	}
 	
-	public int getMoves() {
-		return moves;
-	}
+	private int best = Integer.MAX_VALUE;
 
-	public MoveCounter() {
+	public BestLabel() {
 		jLabel = new JLabel();
-		jLabel.setBounds(200,170,1000,300);
+		jLabel.setBounds(250,270,1000,300);
 		jLabel.setLayout(null);
-		jLabel.setText("Moves: "+moves);
-		jLabel.setFont(new Font("Impact",Font.BOLD, 60));
+		jLabel.setText("Best : -");
+		jLabel.setFont(new Font("Impact",Font.BOLD, 40));
 		jLabel.setForeground(new Color(255,187,0));
 		jLabel.setVisible(true);
 	}
@@ -32,18 +28,15 @@ public class MoveCounter {
 		jLabel.requestFocus();
 	}
 
-	public void resetCounter() {
-		moves = 0;
-		jLabel.setText("Moves: "+moves);
-	}
-
 	public void requestFocus() {
 		jLabel.requestFocus();
 	}
 	
-	public void increaseCounter() {
-		moves++;
-		jLabel.setText("Moves: "+moves);
+	public void setBest(int value) {
+		if (value<best) {
+			best = value;
+			jLabel.setText("Best : "+best);
+		}
 	}
 
 }
