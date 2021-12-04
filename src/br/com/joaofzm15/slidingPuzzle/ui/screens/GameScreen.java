@@ -12,6 +12,7 @@ import br.com.joaofzm15.slidingPuzzle.ui.entities.Board;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Button;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.CongratulationsMessage;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Frame;
+import br.com.joaofzm15.slidingPuzzle.ui.entities.InstructionsLabel;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.MoveCounter;
 import br.com.joaofzm15.slidingPuzzle.ui.entities.Piece;
 
@@ -25,6 +26,7 @@ public class GameScreen implements ActionListener {
 	private Button exitButton;	
 	private boolean solved;
 	private CongratulationsMessage congratulationsMessage;
+	private InstructionsLabel instructionsLabel;
 	private GameScreenController controller;
 
 
@@ -33,11 +35,17 @@ public class GameScreen implements ActionListener {
 	}
 
 	public GameScreen() {
+		solved = true;
+		
 		frame = new Frame("background.png");
 		
 		congratulationsMessage = new CongratulationsMessage();
 		frame.getJFrame().add(congratulationsMessage.getCongratulationsLabel());
 		frame.getJFrame().add(congratulationsMessage.getClickShufflLabel());
+		
+		instructionsLabel = new InstructionsLabel();
+		frame.getJFrame().add(instructionsLabel.getInstructionsLabel1());
+		frame.getJFrame().add(instructionsLabel.getInstructionsLabel2());
 		
 		shuffleButton = new Button(225, 500, 180, 60, "S H U F F L E", 0, 0, 130, 26,this);
 		frame.getJFrame().add(shuffleButton.getJButton());
@@ -74,6 +82,9 @@ public class GameScreen implements ActionListener {
 		exitButton.refreshButton();
 		
 		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
+		instructionsLabel.makeVisible();
+		
+		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		board.refreshButtons();
 		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		board.makeButtonsUnfocusable();
@@ -83,6 +94,7 @@ public class GameScreen implements ActionListener {
 	}
 	
 	public void resetBoard() {
+		instructionsLabel.makeInvisible();
 		solved=false;
 		board.reset();
 		moveCounter.resetCounter();
