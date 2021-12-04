@@ -24,14 +24,6 @@ public class BestLabel {
 		jLabel.setVisible(true);
 	}
 	
-	public void refreshLabel() {
-		jLabel.requestFocus();
-	}
-
-	public void requestFocus() {
-		jLabel.requestFocus();
-	}
-	
 	public void setBest(int value) {
 		if (value<best) {
 			best = value;

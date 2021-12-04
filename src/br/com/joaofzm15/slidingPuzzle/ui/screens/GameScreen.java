@@ -39,10 +39,10 @@ public class GameScreen implements ActionListener {
 		frame.getJFrame().add(congratulationsMessage.getCongratulationsLabel());
 		frame.getJFrame().add(congratulationsMessage.getClickShufflLabel());
 		
-		shuffleButton = new Button(225, 500, 180, 60, "S H U F F L E", 0, 0, 0, 22,this);
+		shuffleButton = new Button(225, 500, 180, 60, "S H U F F L E", 0, 0, 130, 26,this);
 		frame.getJFrame().add(shuffleButton.getJButton());
 		
-		exitButton = new Button(240, 600, 150, 60, "E X I T", 0, 0, 0, 22,this);
+		exitButton = new Button(240, 600, 150, 60, "E X I T", 100, 0, 0, 22,this);
 		frame.getJFrame().add(exitButton.getJButton());
 		
 		bestLabel = new BestLabel();
