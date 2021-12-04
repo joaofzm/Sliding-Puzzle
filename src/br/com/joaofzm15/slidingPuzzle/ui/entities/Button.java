@@ -27,7 +27,7 @@ public class Button {
 		jButton.setFocusable(true);
 	}
 
-	public void refreshButton() {
+	public void requestFocus() {
 		jButton.requestFocus();
 	}
 

@@ -15,14 +15,9 @@ public class Piece {
 		return jButton;
 	}
 
-	public Piece(String imageURL, ActionListener actionListener) {
+	public Piece() {
 		jButton = new JButton();
-		jButton.setForeground(Color.white);
-		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
-		jButton.setIcon(icon);
-		jButton.addActionListener(actionListener);
-		jButton.setBorder(BorderFactory.createLineBorder(new Color(255,255,255)));
-		jButton.setFocusable(true);
+		jButton.setVisible(false);
 	}
 	
 	public Piece(int number, ActionListener actionListener) {

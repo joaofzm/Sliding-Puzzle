@@ -39,7 +39,7 @@ public class Board {
 		for (int i = 1; i <= 15; i++) {
 			pieces.add(new Piece(i, actionListener));
 		}
-		emptyPieceReference = new Piece("16.png", actionListener);
+		emptyPieceReference = new Piece();
 		pieces.add(emptyPieceReference);
 	}
 

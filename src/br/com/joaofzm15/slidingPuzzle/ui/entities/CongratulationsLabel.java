@@ -6,7 +6,7 @@ import java.awt.Font;
 import javax.swing.JLabel;
 
 
-public class CongratulationsMessage {
+public class CongratulationsLabel {
 	private JLabel congratulationsLabel;
 	public JLabel getCongratulationsLabel() {
 		return congratulationsLabel;
@@ -16,7 +16,7 @@ public class CongratulationsMessage {
 		return clickShufflLabel;
 	}
 
-	public CongratulationsMessage() {
+	public CongratulationsLabel() {
 		congratulationsLabel = new JLabel();
 		congratulationsLabel.setBounds(760,-310,1280,720);
 		congratulationsLabel.setLayout(null);
