@@ -1,0 +1,35 @@
+Sliding Puzzle
+04/12/2021
+author: joaofzm
+-----------------------------------
+
+Background Music:
+"Pacing" by Chad Crouch
+License: Attribuition - NonCommercial 3.0 International License.
+Source: https://freemusicarchive.org/music/Chad_Crouch/Drifter/Pacing_1820
+Acess: 2nd July 2021.
+---------------------------------------------------------------------------------------------------
+
+clickSound.wav:
+Author: Mellau
+Original name: Button Click 2.wav
+Original file name: 506053__mellau__button-click-2
+License: Attribution Noncommercial License.
+Source: https://freesound.org/people/Mellau/sounds/506053/
+Acess: 2nd July 2021.
+
+victory.wav:
+Author: unadamlar
+Original name: winning.wav
+Original file name: 341984__unadamlar__winning
+License: Creative Commons 0 License.
+Source: https://freesound.org/people/unadamlar/sounds/341984/
+Acess: 2nd July 2021.
+
+movePiece.wav
+Author: el_boss
+Original name: Piece Placement.mp3
+Original file name: 546119__el-boss__piece-placement
+License: Creative Commons 0 License.
+Source: https://freesound.org/people/el_boss/sounds/546119/
+Acess: 4nd December 2021.

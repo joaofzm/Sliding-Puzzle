@@ -24,7 +24,7 @@ public class Button {
 		jButton.setForeground(Color.white);
 		jButton.setBackground(new Color(red, green, blue));
 		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
-		jButton.setFocusable(false);
+		jButton.setFocusable(true);
 	}
 
 	public void refreshButton() {
