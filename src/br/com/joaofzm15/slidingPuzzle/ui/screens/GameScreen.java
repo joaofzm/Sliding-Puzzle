@@ -69,6 +69,12 @@ public class GameScreen implements ActionListener {
 		}
 	}
 
+	/*
+	This method is required as a workaround interaction for java swing no properly showing the
+	components when the program loads.
+	By doing one action on all the components, such as updating it's text or just commanding it to
+	request focus, we can guarantee all components will be shown.
+	*/
 	public void refreshComponents() {
 		moveCounter.increaseCounter();
 		threadSleep20();

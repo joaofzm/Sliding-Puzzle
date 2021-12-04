@@ -97,8 +97,6 @@ public class Board {
 			piece.getJButton().setFocusable(false);
 		}
 	}
-	//--------------------------------------------------------------------------------------------
-	
 	
 	public void switchPieces(Piece piece1, Piece piece2) {
 		int piece1X = piece1.getJButton().getX();

@@ -8,8 +8,7 @@ import javax.sound.sampled.FloatControl;
 public class SoundEffectConverter {
 	/*
 	 * This class is responsible for converting a audio file path String into the
-	 * actual file and getting it ready to play. All the animation threads that use
-	 * any kind of sound will instantiate this class.
+	 * actual file and getting it ready to play. All sound effects instantiate this class.
 	 */
 	private Clip clip;
 
