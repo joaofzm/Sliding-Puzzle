@@ -36,4 +36,20 @@ public class Piece {
 		jButton.setFocusable(true);
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj==null) {
+			return false;
+		}
+		if(obj.getClass()!=this.getClass()) {
+			return false;
+		}
+
+		Piece objParsedToPiece = (Piece) obj;
+		if(objParsedToPiece.getJButton().getText().equals(this.getJButton().getText())) {
+			return true;
+		}
+		return false;
+	}
+	
 }

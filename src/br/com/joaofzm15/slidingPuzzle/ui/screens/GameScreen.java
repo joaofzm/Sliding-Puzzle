@@ -40,7 +40,7 @@ public class GameScreen implements ActionListener {
 		board = new Board(this);
 		frame.getJFrame().add(board.getJLabel());
 
-		controller = new GameScreenController();
+		controller = new GameScreenController(this);
 
 		refreshComponents();
 	}
@@ -79,11 +79,16 @@ public class GameScreen implements ActionListener {
 			return;
 		}
 		
+		
 		JButton source = (JButton) e.getSource();
 		Piece piece = board.getPieceFromItsButton(source);
-		boolean moved = controller.movePiece(piece, this);
+		boolean moved = controller.movePiece(piece);
 		if (moved) {
 			moveCounter.increaseCounter();
+		}
+		boolean solved = controller.checkVictory();
+		if (solved) {
+			System.out.println("Nice");
 		}
 		
 	}

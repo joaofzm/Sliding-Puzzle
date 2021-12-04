@@ -41,7 +41,9 @@ public class Board {
 		}
 		emptyPieceReference = new Piece("16.png", actionListener);
 		pieces.add(emptyPieceReference);
-		Collections.shuffle(pieces);
+//		Collections.shuffle(pieces);
+		Collections.swap(pieces, 14, 15);
+		
 	}
 
 	public void reset() {
