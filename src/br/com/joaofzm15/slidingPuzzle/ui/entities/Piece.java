@@ -21,21 +21,18 @@ public class Piece {
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
 		jButton.setIcon(icon);
 		jButton.addActionListener(actionListener);
-
-		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
+		jButton.setBorder(BorderFactory.createLineBorder(new Color(255,255,255)));
 		jButton.setFocusable(true);
 	}
 	
 	public Piece(int number, ActionListener actionListener) {
 		jButton = new JButton();
-		jButton.setForeground(Color.white);
 		jButton.addActionListener(actionListener);
-		jButton.setBackground(Color.orange);
 		jButton.setText(String.valueOf(number));
-		jButton.setFont(new Font("Impact",Font.BOLD, 40));
-		jButton.setForeground(Color.white);
-		jButton.setBackground(new Color(30, 30, 30));
-		jButton.setBorder(BorderFactory.createLineBorder(Color.white));
+		jButton.setFont(new Font("Impact",Font.BOLD, 50));
+		jButton.setForeground(new Color(0,0,200));
+		jButton.setBackground(new Color(255, 125, 30));
+		jButton.setBorder(BorderFactory.createLineBorder(new Color(255,255,255)));
 		jButton.setFocusable(true);
 	}
 	
