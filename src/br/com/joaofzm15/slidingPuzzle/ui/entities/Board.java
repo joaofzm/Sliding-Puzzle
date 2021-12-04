@@ -73,7 +73,6 @@ public class Board {
 		return null;
 	}
 
-
 	/*
 	Both this methods are used to correct a unintended interaction in the program.
 	When the buttons are added to the JLabel, they remain invisible until they're hovered
