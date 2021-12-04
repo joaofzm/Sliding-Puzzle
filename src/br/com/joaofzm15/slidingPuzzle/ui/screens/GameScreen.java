@@ -47,18 +47,23 @@ public class GameScreen implements ActionListener {
 	
 	public void refreshComponents() {
 		moveCounter.increaseCounter();
-		try {Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		moveCounter.resetCounter();
 		
-		try {Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		resetButton.refreshButton();
-		try {Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
 		exitButton.refreshButton();
 		
-		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(40);} catch (InterruptedException e) {e.printStackTrace();}
 		board.refreshButtons();
-		try {Thread.sleep(20);} catch (InterruptedException e) {e.printStackTrace();}
+		try {Thread.sleep(40);} catch (InterruptedException e) {e.printStackTrace();}
 		board.makeButtonsUnfocusable();
+	}
+	
+	public void resetBoard() {
+		board.reset();
+		moveCounter.resetCounter();
 	}
 
 	@Override
@@ -66,6 +71,11 @@ public class GameScreen implements ActionListener {
 		
 		if (e.getSource()==exitButton.getJButton()) {
 			frame.dispose();
+			return;
+		}
+		
+		if (e.getSource()==resetButton.getJButton()) {
+			resetBoard();
 			return;
 		}
 		
