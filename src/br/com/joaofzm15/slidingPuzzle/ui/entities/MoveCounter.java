@@ -12,12 +12,16 @@ public class MoveCounter {
 
 	public MoveCounter() {
 		jLabel = new JLabel();
-		jLabel.setBounds(200,170,300,300);
+		jLabel.setBounds(200,170,1000,300);
 		jLabel.setLayout(null);
 		jLabel.setText("Moves: "+moves);
 		jLabel.setFont(new Font("Impact",Font.BOLD, 60));
 		jLabel.setForeground(new Color(255,187,0));
 		jLabel.setVisible(true);
+	}
+	
+	public void refreshLabel() {
+		jLabel.requestFocus();
 	}
 
 	public JLabel getJLabel() {

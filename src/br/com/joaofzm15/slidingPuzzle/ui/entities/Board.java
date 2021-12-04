@@ -30,7 +30,7 @@ public class Board {
 		jLabel = new JLabel();
 		jLabel.setLayout(null);
 		fillListWithPieces(actionListener);
-		printJLabelWithPiecesFromList(pieces);
+		printJLabelWithPiecesFromList();
 		jLabel.setBounds(700, 110, 500, 500);
 		jLabel.setVisible(true);
 	}
@@ -44,7 +44,12 @@ public class Board {
 		Collections.shuffle(pieces);
 	}
 
-	public void printJLabelWithPiecesFromList(ArrayList<Piece> pieces) {
+	public void reset() {
+		Collections.shuffle(pieces);
+		printJLabelWithPiecesFromList();
+	}
+	
+	public void printJLabelWithPiecesFromList() {
 		int x = 0;
 		int y = 0;
 		for (int i = 0; i < pieces.size(); i++) {
@@ -84,6 +89,9 @@ public class Board {
 		for (Piece piece : pieces) {
 			piece.getJButton().requestFocus();
 		}
+		int indexOfEmpty =pieces.indexOf(emptyPieceReference);
+		pieces.get(indexOfEmpty).getJButton().requestFocus();
+		
 	}
 	public void makeButtonsUnfocusable() {
 		for (Piece piece : pieces) {
